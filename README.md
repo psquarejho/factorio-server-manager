@@ -5,6 +5,10 @@
 ### A tool for managing Factorio servers.
 This tool runs on a Factorio server and allows management of the Factorio server, saves, mods and many other features.
 
+## Lifecycle
+
+- Updated regularly for the 0.17.x development branch by Jens Hoffrichter <jens.hoffrichter@p-square.de>
+
 ## Features
 * Allows control of the Factorio Server, starting and stopping the Factorio binary.
 * Allows the management of save files, upload, download and delete saves.
