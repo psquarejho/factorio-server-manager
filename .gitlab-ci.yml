@@ -4,6 +4,7 @@ stages:
 variables:
   IMAGE_NAME: psquarejho/factorio-server-manager
   GIT_SSL_NO_VERIFY: "1"
+  FACTORIO_VERSION: $CI_COMMIT_TAG
 
 before_script:
   - docker login -u $CI_REGISTRY_USER -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
@@ -13,5 +14,6 @@ build:
   tags:
     - shell
   script:
-    - docker build -t $IMAGE_NAME:latest docker/
-    - docker push $IMAGE_TAG:latest
+    - docker build -t $IMAGE_NAME:$FACTORIO_VERSION -t $IMAGE_NAME:latest --build-arg FACTORIO_VERSION=$FACTORIO_VERSION docker/
+    - docker push $IMAGE_NAME:$FACTORIO_VERSION
+    - docker push $IMAGE_NAME:latest
