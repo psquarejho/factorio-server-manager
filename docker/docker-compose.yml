@@ -2,7 +2,7 @@ version: '2'
 services:
     factorio-manager:
         container_name: factorio-manager
-        image: "majormjr/factorio-server-manager"
+        image: "psquarejho/factorio-server-manager:latest"
         restart: always
         volumes:
             - "/etc/localtime:/etc/localtime:ro"
