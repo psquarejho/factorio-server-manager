@@ -12,6 +12,10 @@ build:
   stage: build
   tags:
     - shell
+  only:
+    - tags
+    - triggers
+    - pipelines
   script:
     - docker build -t $IMAGE_NAME:$CI_COMMIT_TAG -t $IMAGE_NAME:latest --build-arg FACTORIO_VERSION=$CI_COMMIT_TAG docker/
     - docker push $IMAGE_NAME:$CI_COMMIT_TAG
