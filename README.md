@@ -36,7 +36,7 @@ This tool runs on a Factorio server and allows management of the Factorio server
 
 2. Build the Docker container for your desired factorio version
    ```
-   docker build --build-arg FACTORIO_VERSION=0.37.41 docker/
+   docker build --build-arg FACTORIO_VERSION=0.17.41 docker/
    ```
   
    Take note of the build hash number shown at the end
