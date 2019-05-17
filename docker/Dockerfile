@@ -3,7 +3,7 @@ FROM frolvlad/alpine-glibc
 
 MAINTAINER Jens Hoffrichter <jens.hoffrichter@p-square.de>
 
-ENV FACTORIO_VERSION=0.17.40 \
+ENV FACTORIO_VERSION=0.17.41 \
     MANAGER_VERSION=0.8.1 \
     ADMIN_PASSWORD=factorio
 
