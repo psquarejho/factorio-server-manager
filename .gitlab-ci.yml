@@ -17,6 +17,7 @@ build:
     - tags
     - triggers
     - pipelines
+    - web
   script:
     - docker build -t $IMAGE_NAME:$FACTORIO_VERSION -t $IMAGE_NAME:latest --build-arg FACTORIO_VERSION=$FACTORIO_VERSION docker/
     - docker push $IMAGE_NAME:$FACTORIO_VERSION
