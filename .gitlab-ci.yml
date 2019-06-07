@@ -41,3 +41,13 @@ build-frontend:
      - app/fonts/vendor
      - app/images/vendor
 
+build-backend:
+  stage: build-software
+  tags:
+    - docker
+  image: go:1.7
+  script:
+    - go build -o factorio-server-manager ./src
+  artifacts:
+    paths:
+      - factorio-server-manager
