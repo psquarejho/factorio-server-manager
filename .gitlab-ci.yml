@@ -32,6 +32,7 @@ build-frontend:
   script:
    - npm install
    - npm run build
+   - ls app/
   artifacts:
     paths:
      - app/bundle.js
