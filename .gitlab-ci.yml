@@ -28,7 +28,8 @@ build-frontend:
   stage: build-software
   tags:
    - docker
-  image: node:4.2.6
+  image: node:carbon-alpine
+
   script:
    - npm install
    - npm run build
