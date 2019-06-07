@@ -29,8 +29,14 @@ build-frontend:
   tags:
    - docker
   image: node:carbon-alpine
-
   script:
    - npm install
    - npm run build
+  artifacts:
+    paths:
+      - app/bundle.js
+	    - app/bundle.css
+	    - app/fonts/vendor
+	    - app/images/vendor
+
 
