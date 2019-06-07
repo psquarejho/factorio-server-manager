@@ -28,6 +28,6 @@ build-software:
   stage: build-software
   tags:
   - docker
-  image: golan:1.12-alpine
+  image: golang:1.12-alpine
   script:
    - make
