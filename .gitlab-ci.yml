@@ -35,7 +35,7 @@ build-frontend:
   artifacts:
     paths:
      - app/bundle.js
-	   - app/bundle.css
-	   - app/fonts/vendor
-	   - app/images/vendor
+     - app/bundle.css
+     - app/fonts/vendor
+     - app/images/vendor
 
