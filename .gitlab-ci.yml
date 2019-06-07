@@ -34,9 +34,8 @@ build-frontend:
    - npm run build
   artifacts:
     paths:
-      - app/bundle.js
-	    - app/bundle.css
-	    - app/fonts/vendor
-	    - app/images/vendor
-
+     - app/bundle.js
+	   - app/bundle.css
+	   - app/fonts/vendor
+	   - app/images/vendor
 
