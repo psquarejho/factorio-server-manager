@@ -47,6 +47,7 @@ build-backend:
     - docker
   image: golang:1.7
   script:
+    - cat gopkglist | xargs go get
     - go build -o factorio-server-manager ./src
   artifacts:
     paths:
