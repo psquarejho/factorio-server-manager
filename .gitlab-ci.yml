@@ -45,7 +45,7 @@ build-backend:
   stage: build-software
   tags:
     - docker
-  image: go:1.7
+  image: golang:1.7
   script:
     - go build -o factorio-server-manager ./src
   artifacts:
