@@ -15,26 +15,26 @@ build: $(release)
 $(shell mkdir -p build)
 build/factorio-server-manager-linux.zip: app/bundle.js factorio-server-manager-linux
 	@echo "Packaging Build - $@"
-	@cp -r app/ factorio-server-manager/
-	@cp conf.json.example factorio-server-manager/conf.json
-	@zip -r $@ factorio-server-manager > /dev/null
-	@rm -r factorio-server-manager
+	cp -r app/ factorio-server-manager/
+	cp conf.json.example factorio-server-manager/conf.json
+	zip -r $@ factorio-server-manager > /dev/null
+	rm -r factorio-server-manager
 
 app/bundle.js:
 	@echo "Building Frontend"
-	@npm install && npm run build
+	npm install && npm run build
 
 factorio-server-manager-linux: godeps
 	@echo "Building Backend - Linux"
-	@GOPATH="${GOPATH}:${PDW}"
-	@mkdir -p factorio-server-manager
-	@GOOS=linux GOARCH=amd64 go build -o factorio-server-manager/factorio-server-manager ./src
+	GOPATH="${GOPATH}:${PDW}"
+	mkdir -p factorio-server-manager
+	GOOS=linux GOARCH=amd64 go build -o factorio-server-manager/factorio-server-manager ./src
 
 factorio-server-manager-windows: godeps
 	@echo "Building Backend - Windows"
-	@GOPATH="${GOPATH}:${PDW}"
-	@mkdir -p factorio-server-manager
-	@GOOS=windows GOARCH=386 go build -o factorio-server-manager/factorio-server-manager.exe ./src
+	GOPATH="${GOPATH}:${PDW}"
+	mkdir -p factorio-server-manager
+	GOOS=windows GOARCH=386 go build -o factorio-server-manager/factorio-server-manager.exe ./src
 
 godeps:
 	@echo "Installing Packages"
