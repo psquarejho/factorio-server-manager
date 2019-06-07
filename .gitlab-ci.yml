@@ -50,7 +50,7 @@ build-backend:
   image: golang:1.7
   script:
     - cat gopkglist | xargs go get
-    - go build -o factorio-server-manager ./src
+    - GOPATH=.:${GOPATH} go build -o factorio-server-manager ./src
   artifacts:
     paths:
       - factorio-server-manager
