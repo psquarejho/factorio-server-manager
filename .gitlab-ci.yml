@@ -30,4 +30,5 @@ build-software:
    - docker
   image: psquarejho/go-node-builder:latest
   script:
+   - uname
    - make
