@@ -1,5 +1,6 @@
 stages:
-- build
+- build-container
+- build-software
 
 variables:
   IMAGE_NAME: psquarejho/factorio-server-manager
@@ -9,8 +10,8 @@ variables:
 before_script:
   - docker login -u $CI_REGISTRY_USER -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
 
-build:
-  stage: build
+build-container:
+  stage: build-container
   tags:
     - shell
   only:
@@ -22,3 +23,11 @@ build:
     - docker build -t $IMAGE_NAME:$FACTORIO_VERSION -t $IMAGE_NAME:latest --build-arg FACTORIO_VERSION=$FACTORIO_VERSION docker/
     - docker push $IMAGE_NAME:$FACTORIO_VERSION
     - docker push $IMAGE_NAME:latest
+
+build-software:
+  stage: build-software
+  tags:
+  - docker
+  image: golan:1.12-alpine
+  script:
+   - make
