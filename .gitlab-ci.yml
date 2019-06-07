@@ -28,7 +28,9 @@ build-software:
   stage: build-software
   tags:
    - docker
-  image: psquarejho/go-node-builder:latest
+  image:
+    name: psquarejho/go-node-builder:latest
+    pull: always
   script:
    - uname
    - make
