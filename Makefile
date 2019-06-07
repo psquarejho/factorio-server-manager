@@ -20,7 +20,7 @@ build/factorio-server-manager-linux.zip: app/bundle.js factorio-server-manager-l
 	@zip -r $@ factorio-server-manager > /dev/null
 	@rm -r factorio-server-manager
 
-app/bundle:
+app/bundle.js:
 	@echo "Building Frontend"
 	@npm install && npm run build
 
