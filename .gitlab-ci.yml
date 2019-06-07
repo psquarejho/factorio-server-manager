@@ -28,6 +28,6 @@ build-software:
   stage: build-software
   tags:
    - docker
-  image: golang:1.12-alpine
+  image: psquarejho/go-node-builder:latest
   script:
    - make
