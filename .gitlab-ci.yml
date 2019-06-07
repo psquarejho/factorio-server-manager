@@ -24,11 +24,12 @@ build-container:
     - docker push $IMAGE_NAME:$FACTORIO_VERSION
     - docker push $IMAGE_NAME:latest
 
-build-software:
+build-frontend:
   stage: build-software
   tags:
    - docker
-  image: psquarejho/go-node-builder:latest
+  image: node:4.2.6
   script:
-   - uname
-   - make
+   - npm install
+   - npm run build
+
