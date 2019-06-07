@@ -26,6 +26,8 @@ build-container:
 
 build-frontend:
   stage: build-software
+  only:
+    - web
   tags:
    - docker
   image: node:carbon-alpine
