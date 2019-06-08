@@ -51,6 +51,7 @@ build-backend:
   script:
     - cat gopkglist | xargs go get
     - echo $GOPATH
+    - ls $GOPATH
     - go build -o factorio-server-manager ./src
   artifacts:
     paths:
