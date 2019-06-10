@@ -47,7 +47,7 @@ build-backend:
   stage: build-software
   tags:
     - docker
-  image: golang:1.7
+  image: golang
   script:
     - cat gopkglist | xargs go get
     - cp -rvda ./src/vendor/lockfile $GOPATH/src/
